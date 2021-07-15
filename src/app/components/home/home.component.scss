@@ -1,0 +1,55 @@
+@import '../../../assets/sass-imports/variables','../../../assets/sass-imports/_mixins', '../../../assets/sass-imports/_reset';
+
+.main {
+    font-family: 'Karla-300';
+    @include flex(row,nowrap,space-between,center);
+    min-width: 100%;
+    height: 100vh;
+    background: $yellow-gradient;
+    padding-left: 10em;
+    padding-top: 10em;
+    color: #212121;
+    &__button {
+        background: #73D677;
+        padding: 1em 2em;
+        padding-bottom: 1.4em;
+        border-radius: 11px;
+        cursor: pointer;
+        box-shadow: inset 0px -9px 0px rgba(0, 0, 0, 0.18);
+        font-size: .9em;
+        font-family: 'Karla-700';
+        border: hidden;
+        outline: none;
+    }
+
+    &__text {
+       margin-right: 2em;
+    }
+
+    &__h1 {
+        font-size: 5em;
+        font-size: clamp(1em,6vw,9em);
+        white-space: nowrap;
+        margin-bottom: .3em;
+        line-height: 1em;
+    }
+
+    &__img {
+        @include flex(row,nowrap,center,center);
+        max-width: 60em;
+        height: 100%;
+        & img{
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+    }
+
+    &__p {
+        white-space: nowrap;
+        font-family: 'Karla-400';
+        font-size: clamp(1em,2vw,3em);
+        line-height: 1em;
+        margin-bottom: 1.2em;
+    }
+}

@@ -1,0 +1,59 @@
+<section class="pokedex">
+  <h2 class="pokedex__h2">800 Pokemons for you to choose your favourite</h2>
+  <input
+    type="text"
+    class="pokedex__input"
+    placeholder="Find your pokemon..."
+  />
+  <div class="pokedex__div">
+    <ul class="pokedex__ul">
+      <li class="pokedex__li" *ngFor="let tipo of tipos">{{ tipo.type }}</li>
+    </ul>
+  </div>
+  <div class="pokedex__grid">
+    <div
+      class="pokedex__card"
+      *ngFor="
+        let pokemon of pokemons
+          | paginate: { itemsPerPage: 12, currentPage: page, totalItems: 300 }
+      "
+    >
+      <div class="card__text">
+        <p class="pokedex__p">{{ pokemon.name }}</p>
+        <ul class="types">
+          <li
+            class="types__li"
+            [ngStyle]="{
+              'background-color': getColors(pokemon.types[0].type.name)
+            }"
+          >
+            {{ pokemon.types[0].type.name }}
+          </li>
+          <li
+            *ngIf="pokemon.types[1]"
+            class="types__li"
+            [ngStyle]="{
+              'background-color': getColors(pokemon.types[1].type.name)
+            }"
+          >
+            {{ pokemon.types[1].type.name }}
+          </li>
+        </ul>
+      </div>
+      <div
+        class="card__img"
+        [ngStyle]="{
+          'background-color': getColors(pokemon.types[0].type.name)
+        }"
+      >
+        <img
+          [src]="pokemon.sprites.front_default"
+          loading="lazy"
+          [alt]="pokemon.name"
+          alt="Pokemon"
+        />
+      </div>
+    </div>
+  </div>
+  <pagination-controls (pageChange)="page = $event"></pagination-controls>
+</section>

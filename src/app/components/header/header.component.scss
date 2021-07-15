@@ -1,0 +1,19 @@
+@import '../../../assets/sass-imports/variables','../../../assets/sass-imports/_mixins', '../../../assets/sass-imports/_reset';
+
+.header {
+    width: 100%;
+    background: $third;
+    @include flex (row,nowrap,space-between,center);
+    padding: 1em 10em;
+    height: 100px;
+    box-shadow: 0px 4px 16px rgba(1, 28, 64, 0.2);
+    position: fixed;
+    top: 0;
+    &__li {
+        display: inline-block;
+        margin: 0 1em;
+        font-size: 1.8em;
+        line-height: 1em;
+    }
+
+}
