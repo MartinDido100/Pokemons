@@ -17,23 +17,28 @@
   }
 
   &__ul {
+    position: relative;
     padding-top: 1em;
     padding-left: 3em;
     @include flex(row, wrap, flex-start, center);
+
+    & li,
+    &div {
+      display: inline-block;
+      margin-right: 1em;
+      height: 1.4em;
+      line-height: 1.4em;
+      font-size: 1.3em;
+      cursor: pointer;
+      margin-bottom: 1em;
+      color: rgb(255, 248, 248);
+    }
   }
 
   &__li {
     text-transform: capitalize;
-    display: inline-block;
-    margin-right: 1em;
     border-radius: .2em;
     padding: 0 1em;
-    height: 1.4em;
-    line-height: 1.4em;
-    font-size: 1.3em;
-    cursor: pointer;
-    margin-bottom: 1em;
-    color: rgb(255, 248, 248);
 
     @for $i from 1 to 19 {
       &:nth-of-type(#{$i}) {
@@ -93,6 +98,18 @@
     display: block;
     font-size: 1.6em;
   }
+
+  &__filter {
+    border: 2px solid green;
+    padding: 0 .5em;
+    color: rgb(19, 19, 19);
+  }
+
+  &__remove {
+    border: 2px solid red;
+    padding: 0 .5em;
+    color: rgb(19, 19, 19);
+  }
 }
 
 .card {
@@ -133,6 +150,11 @@
   }
 }
 
-pagination-controls {
-  margin-top: 2em;
+.active {
+  position: relative;
+
+  &::after {
+    position: absolute;
+    content: "✔";
+  }
 }

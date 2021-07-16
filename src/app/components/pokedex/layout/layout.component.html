@@ -4,19 +4,22 @@
     type="text"
     class="pokedex__input"
     placeholder="Find your pokemon..."
+    name="filterPost"
+    [(ngModel)]="filterPost"
   />
   <div class="pokedex__div">
     <ul class="pokedex__ul">
-      <li class="pokedex__li" *ngFor="let tipo of tipos">{{ tipo.type }}</li>
+      <li class="pokedex__li" *ngFor="let tipo of tipos" (click)="catchTypes($event)">
+        {{ tipo.type }}
+      </li>
+      <li><div (click)="filterTypes()" class="pokedex__filter">Filter!</div></li>
+      <li><div (click)="removeFilter()" class="pokedex__remove">Remove Filter!</div></li>
     </ul>
   </div>
   <div class="pokedex__grid">
     <div
       class="pokedex__card"
-      *ngFor="
-        let pokemon of pokemons
-          | paginate: { itemsPerPage: 12, currentPage: page, totalItems: 300 }
-      "
+      *ngFor="let pokemon of pokemonsToShow | filter: filterPost"
     >
       <div class="card__text">
         <p class="pokedex__p">{{ pokemon.name }}</p>
@@ -55,5 +58,4 @@
       </div>
     </div>
   </div>
-  <pagination-controls (pageChange)="page = $event"></pagination-controls>
 </section>

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild , ElementRef } from '@angular/core';
 import { PokemonsService } from 'src/app/service/pokemons.service';
 
 @Component({
@@ -10,11 +10,14 @@ export class LayoutComponent implements OnInit {
 
   public tipos : Array <any> = [];
   public pokemons : any[] = [];
-  page = 1;
+  public pokemonsToShow: any[] = [];
+  filteredTypes : any[] = [];
   cards: any;
+  filterPost = '';
 
-    getColors(typo:any){
-    switch (typo) {
+
+  getColors(tipo:any){
+    switch (tipo) {
         case 'rock':
           return '#B69E31';
         case 'ghost':
@@ -57,7 +60,7 @@ export class LayoutComponent implements OnInit {
     }
   }
 
-  constructor(public pokeservice : PokemonsService) { 
+  constructor(public pokeservice : PokemonsService, private elem: ElementRef) { 
     this.tipos = pokeservice.types;
   }
   getPokemons(){
@@ -75,8 +78,43 @@ export class LayoutComponent implements OnInit {
         }
         )
   }
+  
+  catchTypes(e:any){
+    e.target.classList.add("active");
+    let str = e.target.textContent.trim();
+    if (this.filteredTypes.length > 0) {
+      if (!this.filteredTypes.includes(str)) {
+        this.filteredTypes.push(str);
+      }else{
+        const index = this.filteredTypes.indexOf(e.target.textContent);
+        this.filteredTypes.splice(index, 1);
+        e.target.classList.remove("active");
+      }
+    }else{
+      this.filteredTypes.push(str);
+    }
+  }
+
+  filterTypes(){
+    if (this.filteredTypes.length > 0) {
+      this.pokemonsToShow = [];
+    }
+    this.pokemons.forEach((x,i)=>{
+      if(this.filteredTypes.includes(x.types[0].type.name)){
+        this.pokemonsToShow.push(x);
+      }
+    })
+  }
+
+  removeFilter(){
+    this.pokemonsToShow = this.pokemons;
+    this.filteredTypes = [];
+    this.elem.nativeElement.querySelectorAll(".active").forEach((x:any) => x.classList.remove("active"));
+  }
 
   ngOnInit(): void {
     this.getPokemons();
+    this.pokemonsToShow = this.pokemons;
   }
+
 }

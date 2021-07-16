@@ -6,12 +6,13 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { HomeComponent } from './components/home/home.component';
 import { LayoutComponent } from './components/pokedex/layout/layout.component';
-import { CardComponent } from './components/pokedex/card/card.component';
 import { LegendariesComponent } from './components/legendaries/legendaries.component';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './shared/material.module';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { FilterPipe } from './pipes/filter.pipe';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -20,8 +21,8 @@ import { NgxPaginationModule } from 'ngx-pagination';
     HeaderComponent,
     HomeComponent,
     LayoutComponent,
-    CardComponent,
-    LegendariesComponent
+    LegendariesComponent,
+    FilterPipe
   ],
   imports: [
     BrowserModule,
@@ -29,7 +30,8 @@ import { NgxPaginationModule } from 'ngx-pagination';
     HttpClientModule,
     BrowserAnimationsModule,
     MaterialModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
