@@ -1,8 +1,19 @@
 <header class="header">
-    <div class="header__div"><img src="./assets/images/Logo.png" alt="" class="header__img"></div>
-    <ul class="header__ul">
-        <li class="header__li"><a routerLink="/" class="header__a">Home</a></li>
-        <li class="header__li"><a routerLink="/pokedex" class="header__a">Pókedex</a></li>
-        <li class="header__li"><a routerLink="/legendaries" class="header__a">Legendaries</a></li>
-    </ul>
+  <div class="header__div">
+    <img src="./assets/images/Logo.png" alt="" class="header__img" />
+  </div>
+  <ul class="header__ul">
+    <li class="header__li"><a routerLink="/" class="header__a">Home</a></li>
+    <li class="header__li">
+      <a routerLink="/pokedex" class="header__a">Pókedex</a>
+    </li>
+    <li class="header__li"></li>
+  </ul>
+  <div class="header__menu" (click)="openMenu()">
+    <svg viewBox="0 0 100 80" width="40" height="40">
+      <rect width="100" height="20"></rect>
+      <rect y="30" width="100" height="20"></rect>
+      <rect y="60" width="100" height="20"></rect>
+    </svg>
+  </div>
 </header>

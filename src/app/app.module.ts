@@ -6,7 +6,6 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { HomeComponent } from './components/home/home.component';
 import { LayoutComponent } from './components/pokedex/layout/layout.component';
-import { LegendariesComponent } from './components/legendaries/legendaries.component';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './shared/material.module';
@@ -21,7 +20,6 @@ import { FormsModule } from '@angular/forms';
     HeaderComponent,
     HomeComponent,
     LayoutComponent,
-    LegendariesComponent,
     FilterPipe
   ],
   imports: [
