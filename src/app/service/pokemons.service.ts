@@ -1,11 +1,11 @@
-import { Injectable } from '@angular/core';
+import { Injectable, EventEmitter,Output} from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PokemonsService {
-
+  @Output() windowClickable: EventEmitter <any> = new EventEmitter(); 
   constructor(private http: HttpClient) { }
 
   getPokemons(){

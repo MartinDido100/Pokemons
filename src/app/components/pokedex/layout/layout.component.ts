@@ -15,6 +15,7 @@ export class LayoutComponent implements OnInit {
   cards: any;
   filterPost = '';
 
+  @ViewChild('pokedex') pokedex:any;
 
   getColors(tipo:any){
     switch (tipo) {
@@ -117,4 +118,7 @@ export class LayoutComponent implements OnInit {
     this.pokemonsToShow = this.pokemons;
   }
 
+  ngAfterViewInit(){
+    this.pokeservice.windowClickable.emit(this.pokedex.nativeElement); 
+  } 
 }
