@@ -1,4 +1,4 @@
-@import '../../../../assets/sass-imports/variables', '../../../../assets/sass-imports/_mixins', '../../../../assets/sass-imports/_reset';
+@import '../../../../assets/sass-imports/variables', '../../../../assets/sass-imports/_mixins';
 
 
 .pokedex {
@@ -103,13 +103,11 @@
   &__filter {
     border: 2px solid green;
     padding: 0 .5em;
-    color: rgb(19, 19, 19);
   }
 
   &__remove {
     border: 2px solid red;
     padding: 0 .5em;
-    color: rgb(19, 19, 19);
   }
 }
 
@@ -169,15 +167,14 @@
   top: 5em;
   @include flex(row, nowrap, center, center);
   z-index: 1;
-}
-
-.spinner {
-  border: 4px solid rgba(0, 0, 0, 0.1);
-  width: 10em;
-  height: 10em;
-  border-radius: 50%;
-  border-left-color: #09f;
-  animation: spin 1s ease infinite;
+  & .spinner {
+    border: 4px solid rgba(0, 0, 0, 0.1);
+    width: 10em;
+    height: 10em;
+    border-radius: 50%;
+    border-left-color: #09f;
+    animation: spin 1s ease infinite;
+  }
 }
 
 @keyframes spin {
