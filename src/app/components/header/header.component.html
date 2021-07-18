@@ -3,9 +3,9 @@
     <img src="./assets/images/Logo.png" alt="" class="header__img" />
   </div>
   <ul class="header__ul">
-    <li class="header__li"><a routerLink="/" class="header__a">Home</a></li>
+    <li class="header__li"><a routerLink="/" class="header__a" (click)="closeMenu()">Home</a></li>
     <li class="header__li">
-      <a routerLink="/pokedex" class="header__a">Pókedex</a>
+      <a routerLink="/pokedex" class="header__a" (click)="closeMenu()">Pókedex</a>
     </li>
     <li class="header__li"></li>
   </ul>

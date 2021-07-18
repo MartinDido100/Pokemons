@@ -14,6 +14,7 @@ export class LayoutComponent implements OnInit {
   filteredTypes : any[] = [];
   cards: any;
   filterPost = '';
+  isLoading: boolean = true;
 
   @ViewChild('pokedex') pokedex:any;
 
@@ -69,7 +70,11 @@ export class LayoutComponent implements OnInit {
         (res:any)=>{
           res.results.forEach((result:any) => {
               this.pokeservice.getMorePokemons(result.name).subscribe(
-                response => this.pokemons.push(response)
+                (response:any) => {
+                  console.log("xd");
+                  
+                  this.pokemons.push(response); 
+                }
               )
           });
           
@@ -116,9 +121,12 @@ export class LayoutComponent implements OnInit {
   ngOnInit(): void {
     this.getPokemons();
     this.pokemonsToShow = this.pokemons;
+    setTimeout(() => {
+      this.isLoading = false;
+    }, 3000);
   }
 
   ngAfterViewInit(){
-    this.pokeservice.windowClickable.emit(this.pokedex.nativeElement); 
+    this.pokeservice.windowClickable.emit(this.pokedex.nativeElement);
   } 
 }

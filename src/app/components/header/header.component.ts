@@ -43,9 +43,18 @@ export class HeaderComponent implements OnInit {
     }
   }
   
+  closeMenu(){
+    const ul = this.elem.nativeElement.querySelector(".header__ul");
+    if (this.isOpended == true) {
+      ul.classList.remove("header__ul-active");
+      this.isOpended = false;
+    }
+  }
+
   ngOnInit(): void {
     this.traerMain();
     this.traerPokedex();
+    this.closeMenu();
   }
 
 }

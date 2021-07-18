@@ -1,6 +1,7 @@
 @import '../../../assets/sass-imports/variables', '../../../assets/sass-imports/_mixins', '../../../assets/sass-imports/_reset';
 
 .main {
+  overflow: hidden;
   font-family: 'Karla-300';
   @include flex(row, nowrap, center, center);
   min-width: 100%;

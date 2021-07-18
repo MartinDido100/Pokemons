@@ -1,4 +1,7 @@
 <section class="pokedex" #pokedex>
+  <div class="spinner-cont" *ngIf="isLoading">
+    <div class="spinner"></div>
+  </div>
   <h2 class="pokedex__h2">800 Pokemons for you to choose your favourite</h2>
   <input
     type="text"
