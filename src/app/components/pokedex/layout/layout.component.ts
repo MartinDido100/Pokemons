@@ -121,7 +121,7 @@ export class LayoutComponent implements OnInit {
     this.pokemonsToShow = this.pokemons;
     setTimeout(() => {
       this.isLoading = false;
-    }, 2000);
+    }, 1500);
   }
 
   ngAfterViewInit(){

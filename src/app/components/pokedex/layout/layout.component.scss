@@ -32,7 +32,7 @@
       font-size: 1.3em;
       cursor: pointer;
       margin-bottom: 1em;
-      color: rgb(32, 32, 32);
+      color: rgb(255, 248, 248);
     }
   }
 
@@ -40,7 +40,6 @@
     text-transform: capitalize;
     border-radius: .2em;
     padding: 0 1em;
-    color: rgb(255, 248, 248);
     @for $i from 1 to 19 {
       &:nth-of-type(#{$i}) {
         background: nth($colors, $i);
@@ -76,7 +75,7 @@
   }
 
   &__grid {
-    padding: 1em 0;
+    padding: 1em .7em;
     margin-top: 6em;
     width: 100%;
     display: grid;
@@ -103,11 +102,13 @@
   &__filter {
     border: 2px solid green;
     padding: 0 .5em;
+    color: rgb(32, 32, 32);
   }
 
   &__remove {
     border: 2px solid red;
     padding: 0 .5em;
+    color: rgb(32, 32, 32);
   }
 }
 
