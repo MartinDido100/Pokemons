@@ -71,8 +71,6 @@ export class LayoutComponent implements OnInit {
           res.results.forEach((result:any) => {
               this.pokeservice.getMorePokemons(result.name).subscribe(
                 (response:any) => {
-                  console.log("xd");
-                  
                   this.pokemons.push(response); 
                 }
               )
@@ -123,7 +121,7 @@ export class LayoutComponent implements OnInit {
     this.pokemonsToShow = this.pokemons;
     setTimeout(() => {
       this.isLoading = false;
-    }, 3000);
+    }, 2000);
   }
 
   ngAfterViewInit(){
