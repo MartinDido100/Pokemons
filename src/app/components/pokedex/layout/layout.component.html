@@ -10,15 +10,15 @@
     name="filterPost"
     [(ngModel)]="filterPost"
   />
-  <div class="pokedex__div">
-    <ul class="pokedex__ul">
-      <li class="pokedex__li" *ngFor="let tipo of tipos" (click)="catchTypes($event)">
+  <div class="pokedex__div" #filters>
+      <div class="pokedex__li" *ngFor="let tipo of tipos" (click)="catchTypes($event)">
         {{ tipo.type }}
-      </li>
-      <li><div (click)="filterTypes()" class="pokedex__filter">Filter!</div></li>
-      <li><div (click)="removeFilter()" class="pokedex__remove">Remove Filter!</div></li>
-    </ul>
+      </div>
+      <div (click)="filterTypes()" class="pokedex__filter pokedex__li">Filter!</div>
+      <div (click)="removeFilter()" class="pokedex__remove pokedex__li">Remove</div>
+      <div class="pokedex__close" (click)="closeFilters()"><i class="fas fa-chevron-up"></i></div>
   </div>
+  <div class="pokedex__responsive-filter" (click)="openFilters()">Filter</div>
   <div class="pokedex__grid">
     <div
       class="pokedex__card"

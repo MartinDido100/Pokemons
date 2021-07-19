@@ -1,4 +1,5 @@
-import { Component, OnInit, ViewChild , ElementRef } from '@angular/core';
+import { style } from '@angular/animations';
+import { Component, OnInit, ViewChild , ElementRef,Renderer2 } from '@angular/core';
 import { PokemonsService } from 'src/app/service/pokemons.service';
 
 @Component({
@@ -17,6 +18,7 @@ export class LayoutComponent implements OnInit {
   isLoading: boolean = true;
 
   @ViewChild('pokedex') pokedex:any;
+  @ViewChild('filters') filters:any;
 
   getColors(tipo:any){
     switch (tipo) {
@@ -62,7 +64,7 @@ export class LayoutComponent implements OnInit {
     }
   }
 
-  constructor(public pokeservice : PokemonsService, private elem: ElementRef) { 
+  constructor(public pokeservice : PokemonsService, private elem: ElementRef,private renderer2 : Renderer2) { 
     this.tipos = pokeservice.types;
   }
   getPokemons(){
@@ -114,6 +116,16 @@ export class LayoutComponent implements OnInit {
     this.pokemonsToShow = this.pokemons;
     this.filteredTypes = [];
     this.elem.nativeElement.querySelectorAll(".active").forEach((x:any) => x.classList.remove("active"));
+  }
+
+  openFilters(){
+    const divFilters = this.filters.nativeElement;
+    this.renderer2.setStyle(divFilters,'top',0);
+  }
+
+  closeFilters(){
+    const divFilters = this.filters.nativeElement;
+    this.renderer2.setStyle(divFilters,'top','-100%');
   }
 
   ngOnInit(): void {
