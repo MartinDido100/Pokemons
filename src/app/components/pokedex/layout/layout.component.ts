@@ -1,4 +1,3 @@
-import { style } from '@angular/animations';
 import { Component, OnInit, ViewChild , ElementRef,Renderer2 } from '@angular/core';
 import { PokemonsService } from 'src/app/service/pokemons.service';
 
