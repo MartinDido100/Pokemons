@@ -76,14 +76,14 @@ export class LayoutComponent implements OnInit {
                 }
               )
           });
-          
+          this.isLoading = false;
         },
         err=>{ 
           console.log(err);
         }
         )
   }
-  
+    
   catchTypes(e:any){
     e.target.classList.add("active");
     let str = e.target.textContent.trim();
@@ -130,9 +130,6 @@ export class LayoutComponent implements OnInit {
   ngOnInit(): void {
     this.getPokemons();
     this.pokemonsToShow = this.pokemons;
-    setTimeout(() => {
-      this.isLoading = false;
-    }, 1500);
   }
 
   ngAfterViewInit(){

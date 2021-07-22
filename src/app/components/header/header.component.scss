@@ -67,6 +67,7 @@
 
     @media screen and (max-width: 725px) {
       margin-bottom: .5em;
+
       &:hover {
         &::after {
           opacity: 0;
@@ -87,5 +88,10 @@
 
   &__div {
     margin-left: 2em;
+
+    & img {
+      width: 100%;
+      height: 100%;
+    }
   }
 }
