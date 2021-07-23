@@ -1,0 +1,105 @@
+{
+  "configVersion": 1,
+  "timestamp": 1627058356108,
+  "index": "/index.html",
+  "assetGroups": [
+    {
+      "name": "app",
+      "installMode": "prefetch",
+      "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [
+        "/favicon.ico",
+        "/index.html",
+        "/main.0db8907fa007d2e913c3.js",
+        "/manifest.webmanifest",
+        "/polyfills.6dcbfe190ec4ca73961c.js",
+        "/runtime.332d8cc2e18af3050e82.js",
+        "/styles.47e374dd386daa4e3a59.css"
+      ],
+      "patterns": []
+    },
+    {
+      "name": "assets",
+      "installMode": "lazy",
+      "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [
+        "/Karla-VariableFont_wght.d9146c4b04a4542a6236.ttf",
+        "/SourceSansPro-Regular.efa76f8326aa5cee3bdd.ttf",
+        "/assets/fonts/Karla-Italic-VariableFont_wght.ttf",
+        "/assets/fonts/Karla-VariableFont_wght.ttf",
+        "/assets/fonts/SourceSansPro-Regular.ttf",
+        "/assets/icons/icon-128x128.png",
+        "/assets/icons/icon-144x144.png",
+        "/assets/icons/icon-152x152.png",
+        "/assets/icons/icon-192x192.png",
+        "/assets/icons/icon-384x384.png",
+        "/assets/icons/icon-512x512.png",
+        "/assets/icons/icon-72x72.png",
+        "/assets/icons/icon-96x96.png",
+        "/assets/images/Logo.png",
+        "/assets/images/arrow.svg",
+        "/assets/images/pikachu.png",
+        "/assets/sass-imports/_fonts.scss",
+        "/assets/sass-imports/_mixins.scss",
+        "/assets/sass-imports/_reset.scss",
+        "/assets/sass-imports/_variables.scss"
+      ],
+      "patterns": []
+    }
+  ],
+  "dataGroups": [],
+  "hashTable": {
+    "/Karla-VariableFont_wght.d9146c4b04a4542a6236.ttf": "c6d61e4113ff1189e0849ccad1bbde31ae357695",
+    "/SourceSansPro-Regular.efa76f8326aa5cee3bdd.ttf": "fa4e303960cd8bf37a2171c4bc6186684f2d4178",
+    "/assets/fonts/Karla-Italic-VariableFont_wght.ttf": "cb04f4552ae76abc2f2592f33db46ff3257ad6a5",
+    "/assets/fonts/Karla-VariableFont_wght.ttf": "c6d61e4113ff1189e0849ccad1bbde31ae357695",
+    "/assets/fonts/SourceSansPro-Regular.ttf": "fa4e303960cd8bf37a2171c4bc6186684f2d4178",
+    "/assets/icons/icon-128x128.png": "dae3b6ed49bdaf4327b92531d4b5b4a5d30c7532",
+    "/assets/icons/icon-144x144.png": "b0bd89982e08f9bd2b642928f5391915b74799a7",
+    "/assets/icons/icon-152x152.png": "7479a9477815dfd9668d60f8b3b2fba709b91310",
+    "/assets/icons/icon-192x192.png": "1abd80d431a237a853ce38147d8c63752f10933b",
+    "/assets/icons/icon-384x384.png": "329749cd6393768d3131ed6304c136b1ca05f2fd",
+    "/assets/icons/icon-512x512.png": "559d9c4318b45a1f2b10596bbb4c960fe521dbcc",
+    "/assets/icons/icon-72x72.png": "c457e56089a36952cd67156f9996bc4ce54a5ed9",
+    "/assets/icons/icon-96x96.png": "3914125a4b445bf111c5627875fc190f560daa41",
+    "/assets/images/Logo.png": "acca2ce47e9445be43a1b5d4fa7bfe9d51e20aef",
+    "/assets/images/arrow.svg": "47d2956d5209f9e7559bc25d89c91b63d622677b",
+    "/assets/images/pikachu.png": "99f0b7af9abd473d28025efa2ea75f4f18644b99",
+    "/assets/sass-imports/_fonts.scss": "6fc798f20740bd12f06021f065b4f0dd4f3c5eaa",
+    "/assets/sass-imports/_mixins.scss": "1b9e1de6ced0d22404808c09cc3bf837fbc556cc",
+    "/assets/sass-imports/_reset.scss": "62206598eafc0bfaf53d39b3e1755f797430add9",
+    "/assets/sass-imports/_variables.scss": "56958680743637958b649b2a95de9a765519595d",
+    "/favicon.ico": "22f6a4a3bcaafafb0254e0f2fa4ceb89e505e8b2",
+    "/index.html": "63f14b2610dc6dad4413e0e5f19f46796039f55e",
+    "/main.0db8907fa007d2e913c3.js": "d75252023024e97d352699c1d6ad90704dc113a9",
+    "/manifest.webmanifest": "6c06791fe46f71487b09ac12b0e5442fa1ba1a59",
+    "/polyfills.6dcbfe190ec4ca73961c.js": "4584d331f252e91d6c6379654631a80e98e5991b",
+    "/runtime.332d8cc2e18af3050e82.js": "5939b43375f718e09a7b04e9580dc7fb2a89da9f",
+    "/styles.47e374dd386daa4e3a59.css": "3e1cb123fae668a262949153a3af5a7b30e6a1ac"
+  },
+  "navigationUrls": [
+    {
+      "positive": true,
+      "regex": "^\\/.*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*\\.[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*\\/.*$"
+    }
+  ],
+  "navigationRequestStrategy": "performance"
+}
